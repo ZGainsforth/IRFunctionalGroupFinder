@@ -1,0 +1,117 @@
+,min cm-1,max cm-1,Intensity,Shape,Group,Type,Name,Notes,Ref
+0,3584,3700,medium,sharp,O-H,stretching,alcohol,free,2.0
+1,3200,3550,strong,broad,O-H,stretching,alcohol,intermolecular bonded,2.0
+2,3400,3500,medium,-,N-H,stretching,primary amine,-,2.0
+3,3300,3400,medium,-,N-H,stretching,aliphatic primary amine,-,2.0
+4,3310,3350,medium,-,N-H,stretching,secondary amine,-,2.0
+5,3250,3330,medium,-,N-H,stretching,aliphatic primary amine,-,2.0
+6,2500,3300,strong,broad,O-H,stretching,carboxylic acid,usually centered on 3000 cm-1,2.0
+7,2700,3200,weak,broad,O-H,stretching,alcohol,intramolecular bonded,2.0
+8,2800,3000,strong,broad,N-H,stretching,amine salt,-,2.0
+9,3267,3333,strong,sharp,C-H,stretching,alkyne,-,2.0
+10,3000,3100,medium,-,C-H,stretching,alkene,-,2.0
+11,2840,3000,medium,-,C-H,stretching,alkane,-,2.0
+12,2695,2830,medium,-,C-H,stretching,aldehyde,doublet,2.0
+13,2550,2600,weak,-,S-H,stretching,thiol,-,2.0
+14,2349,2349,strong,-,O=C=O,stretching,carbon dioxide,-,2.0
+15,2250,2275,strong,broad,N=C=O,stretching,isocyanate,-,2.0
+16,2222,2260,weak,-,CΞN,stretching,nitrile,-,2.0
+17,2190,2260,weak,-,CΞC,stretching,alkyne,disubstituted,2.0
+18,2140,2175,strong,-,S-CΞN,stretching,thiocyanate,-,2.0
+19,2120,2160,strong,-,N=N=N,stretching,azide,-,2.0
+20,2150,2150,-,-,C=C=O,stretching,ketene,-,2.0
+21,2120,2145,strong,-,N=C=N,stretching,carbodiimide,-,2.0
+22,2100,2140,weak,-,CΞC,stretching,alkyne,monosubstituted,2.0
+23,1990,2140,strong,-,N=C=S,stretching,isothiocyanate,-,2.0
+24,1900,2000,medium,-,C=C=C,stretching,allene,-,2.0
+25,2000,2000,-,-,C=C=N,stretching,ketenimine,-,2.0
+26,1650,2000,weak,-,C-H,bending,aromatic compound,overtone,2.0
+27,1750,1818,strong,-,C=O,stretching,anhydride,-,2.0
+28,1785,1815,strong,-,C=O,stretching,acid halide,-,2.0
+29,1770,1800,strong,-,C=O,stretching,conjugated acid halide,-,2.0
+30,1720,1775,strong,-,C=O,stretching,conjugated anhydride,-,2.0
+31,1780,1770,strong,-,C=O,stretching,vinyl / phenyl ester,-,2.0
+32,1760,1760,strong,-,C=O,stretching,carboxylic acid,monomer,2.0
+33,1735,1750,strong,-,C=O,stretching,esters,6-membered lactone,2.0
+34,1735,1750,strong,-,C=O,stretching,δ-lactone,γ: 1770,2.0
+35,1745,1745,strong,-,C=O,stretching,cyclopentanone,-,2.0
+36,1720,1740,strong,-,C=O,stretching,aldehyde,-,2.0
+37,1715,1730,strong,-,C=O,stretching,"α,β-unsaturated ester",or formates,2.0
+38,1705,1725,strong,-,C=O,stretching,aliphatic ketone,or cyclohexanone or cyclopentenone,2.0
+39,1706,1720,strong,-,C=O,stretching,carboxylic acid,dimer,2.0
+40,1680,1710,strong,-,C=O,stretching,conjugated acid,dimer,2.0
+41,1685,1710,strong,-,C=O,stretching,conjugated aldehyde,-,2.0
+42,1690,1690,strong,-,C=O,stretching,primary amide,free (associated: 1650),2.0
+43,1640,1690,medium,-,C=N,stretching,imine / oxime,-,2.0
+44,1666,1685,strong,-,C=O,stretching,conjugated ketone,-,2.0
+45,1680,1680,strong,-,C=O,stretching,secondary amide,free (associated: 1640),2.0
+46,1680,1680,strong,-,C=O,stretching,tertiary amide,free (associated: 1630),2.0
+47,1650,1650,strong,-,C=O,stretching,δ-lactam,γ: 1750-1700 β: 1760-1730,2.0
+48,1668,1678,weak,-,C=C,stretching,alkene,disubstituted (trans),2.0
+49,1665,1675,weak,-,C=C,stretching,alkene,trisubstituted,2.0
+50,1665,1675,weak,-,C=C,stretching,alkene,tetrasubstituted,2.0
+51,1626,1662,medium,-,C=C,stretching,alkene,disubstituted (cis),2.0
+52,1648,1658,medium,-,C=C,stretching,alkene,vinylidene,2.0
+53,1600,1650,medium,-,C=C,stretching,conjugated alkene,-,2.0
+54,1580,1650,medium,-,N-H,bending,amine,-,2.0
+55,1566,1650,medium,-,C=C,stretching,cyclic alkene,-,2.0
+56,1638,1648,strong,-,C=C,stretching,alkene,monosubstituted,2.0
+57,1610,1620,strong,-,C=C,stretching,"α,β-unsaturated ketone",-,2.0
+58,1500,1550,strong,-,N-O,stretching,nitro compound,-,2.0
+59,1465,1465,medium,-,C-H,bending,alkane,methylene group,2.0
+60,1375,1450,medium,-,C-H,bending,alkane,methyl group,2.0
+61,1380,1390,medium,-,C-H,bending,aldehyde,-,2.0
+62,1380,1385,medium,-,C-H,bending,alkane,gem dimethyl,2.0
+63,1290,1372,strong,-,N-O,stretching,nitro compound,-,2.0
+64,1365,1370,medium,-,C-H,bending,alkane,gem dimethyl,2.0
+65,1395,1440,medium,-,O-H,bending,carboxylic acid,-,2.0
+66,1330,1420,medium,-,O-H,bending,alcohol,-,2.0
+67,1380,1415,strong,-,S=O,stretching,sulfate,-,2.0
+68,1380,1410,strong,-,S=O,stretching,sulfonyl chloride,-,2.0
+69,1000,1400,strong,-,C-F,stretching,fluoro compound,-,2.0
+70,1310,1390,medium,-,O-H,bending,phenol,-,2.0
+71,1335,1372,strong,-,S=O,stretching,sulfonate,-,2.0
+72,1335,1370,strong,-,S=O,stretching,sulfonamide,-,2.0
+73,1342,1350,strong,-,S=O,stretching,sulfonic acid,anhydrous  hydrate: 1230-1120,2.0
+74,1300,1350,strong,-,S=O,stretching,sulfone,-,2.0
+75,1266,1342,strong,-,C-N,stretching,aromatic amine,-,2.0
+76,1250,1310,strong,-,C-O,stretching,aromatic ester,-,2.0
+77,1200,1275,strong,-,C-O,stretching,alkyl aryl ether,-,2.0
+78,1020,1250,medium,-,C-N,stretching,amine,-,2.0
+79,1200,1225,strong,-,C-O,stretching,vinyl ether,-,2.0
+80,1163,1210,strong,-,C-O,stretching,ester,-,2.0
+81,1124,1205,strong,-,C-O,stretching,tertiary alcohol,-,2.0
+82,1177,1204,strong,-,S=O,stretching,sulfonyl chloride,-,2.0
+83,1185,1200,strong,-,S=O,stretching,sulfate,-,2.0
+84,1168,1195,strong,-,S=O,stretching,sulfonate,-,2.0
+85,1155,1170,strong,-,S=O,stretching,sulfonamide,-,2.0
+86,1150,1165,strong,-,S=O,stretching,sulfonic acid,anhydrous  hydrate: 1230-1120,2.0
+87,1120,1160,strong,-,S=O,stretching,sulfone,-,2.0
+88,1085,1150,strong,-,C-O,stretching,aliphatic ether,-,2.0
+89,1087,1124,strong,-,C-O,stretching,secondary alcohol,-,2.0
+90,1050,1085,strong,-,C-O,stretching,primary alcohol,-,2.0
+91,1020,1075,strong,-,C-O,stretching,alkyl aryl ether,-,2.0
+92,1020,1075,strong,-,C-O,stretching,vinyl ether,-,2.0
+93,1030,1070,strong,-,S=O,stretching,sulfoxide,-,2.0
+94,1040,1050,strong,broad,CO-O-CO,stretching,anhydride,-,2.0
+95,985,995,strong,-,C=C,bending,alkene,monosubstituted,2.0
+96,960,980,strong,-,C=C,bending,alkene,disubstituted (trans),2.0
+97,905,915,strong,-,C=C,bending,alkene,monosubstituted,2.0
+98,885,895,strong,-,C=C,bending,alkene,vinylidene,2.0
+99,550,850,strong,-,C-Cl,stretching,halo compound,-,2.0
+100,790,840,medium,-,C=C,bending,alkene,trisubstituted,2.0
+101,665,730,strong,-,C=C,bending,alkene,disubstituted (cis),2.0
+102,515,690,strong,-,C-Br,stretching,halo compound,-,2.0
+103,500,600,strong,-,C-I,stretching,halo compound,-,2.0
+104,860,900,strong,-,C-H,bending,"1,2,4-trisubstituted",-,2.0
+105,860,900,strong,-,C-H,bending,"1,3-disubstituted",-,2.0
+106,790,830,strong,-,C-H,bending,"1,4-disubstituted",-,2.0
+107,790,830,strong,-,C-H,bending,"1,2,4-trisubstituted",-,2.0
+108,790,830,strong,-,C-H,bending,"1,2,3,4-tetrasubstituted",-,2.0
+109,760,800,strong,-,C-H,bending,"1,3-disubstituted",,
+110,760,800,strong,-,C-H,bending,"1,2,3-trisubstituted",-,2.0
+111,735,775,strong,-,C-H,bending,"1,2-disubstituted",-,2.0
+112,730,770,strong,-,C-H,bending,monosubstituted benzene derivative,-,2.0
+113,680,720,strong,-,C-H,bending,"1,2,3-trisubstituted",-,2.0
+114,680,720,strong,-,C-H,bending,"1,3-disubstituted",-,2.0
+115,680,720,strong,-,C-H,bending,monosubstituted benzene derivative,-,2.0
