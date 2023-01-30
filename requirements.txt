@@ -1,0 +1,5 @@
+scipy==1.7.3
+streamlit==1.11.0
+astropy==5.1
+numpy==1.22.3
+plotly==5.9.0
