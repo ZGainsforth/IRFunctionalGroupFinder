@@ -28,7 +28,7 @@ st.write(SearchForGroups)
 SpectrumDict = {} 
 # Option to add a spectrum.
 st.set_option('deprecation.showfileUploaderEncoding', False)
-SpectrumFiles = st.file_uploader('Choose a spectrum file:', accept_multiple_files=True)
+SpectrumFiles = st.file_uploader('Choose a spectrum file(s) in csv two-column format: (cm-1, intensity [between 0 and 1]):', accept_multiple_files=True)
 if SpectrumFiles is not None:
     for SpectrumFile in SpectrumFiles:
         SpectrumDict[SpectrumFile.name] = pd.read_csv(SpectrumFile)
