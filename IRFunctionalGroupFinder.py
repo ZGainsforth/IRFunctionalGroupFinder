@@ -24,22 +24,27 @@ SearchForGroups = SearchForGroups[SearchForGroups['max cm-1'] > SearchAround-Sea
 st.markdown(f'### Functional groups between {SearchAround-SearchWidth} and {SearchAround+SearchWidth} cm-1')
 st.write(SearchForGroups)
 
+# We can show multiple spectra, but we need to keep them in a list.
+SpectrumDict = {} 
+# Option to add a spectrum.
 st.set_option('deprecation.showfileUploaderEncoding', False)
-SpectrumFile = st.file_uploader('Choose a spectrum file:')
+SpectrumFiles = st.file_uploader('Choose a spectrum file:', accept_multiple_files=True)
+if SpectrumFiles is not None:
+    for SpectrumFile in SpectrumFiles:
+        SpectrumDict[SpectrumFile.name] = pd.read_csv(SpectrumFile)
 
-if SpectrumFile is None:
+# If there is no spectrum, and the user isn't adding one, then we have to have a default (empty) spectrum so we can still show functional group positions in the plot.
+if (len(SpectrumDict) == 0):
     S = pd.DataFrame()
     S['cm-1'] = range(0,4000,4)
     S['I'] = np.zeros(1000)
     st.write('Loading default spectrum.')
-else:
-    S = pd.read_csv(SpectrumFile)
-
-# st.write(S)
+    SpectrumDict['Default'] = S
 
 fig = go.Figure(layout_title_text='Experimental Spectrum')
-x,y = S.iloc[:,0], S.iloc[:,1]
-fig.add_trace(go.Line(x=x, y=y))
+for label,S in SpectrumDict.items():
+    x,y = S.iloc[:,0], S.iloc[:,1]
+    fig.add_trace(go.Line(x=x, y=y, name=label))
 if len(ShowGroups) > 0:
     for i, g in enumerate(ShowGroups):
         Records = Groups[Groups['Group'] == g]
