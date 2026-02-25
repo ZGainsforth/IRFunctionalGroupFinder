@@ -93,7 +93,7 @@ if (len(SpectrumDict) == 0):
 fig = go.Figure(layout_title_text='Experimental Spectrum')
 for label,S in SpectrumDict.items():
     x,y = S.iloc[:,0], S.iloc[:,1]
-    fig.add_trace(go.Line(x=x, y=y, name=label))
+    fig.add_trace(go.Scatter(x=x, y=y, name=label, mode='lines'))
 if len(ShowGroups) > 0:
     for i, g in enumerate(ShowGroups):
         Records = Groups[Groups['Group'] == g]
@@ -114,7 +114,7 @@ if len(ShowGroups) > 0:
                 r_y.append(y.max()-1-i/10)
                 r_y.append(y.max()-1-i/10)
                 r_y.append(None)
-        fig.add_trace(go.Line(x=r_x, y=r_y, name=f'{r["Group"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
+        fig.add_trace(go.Scatter(x=r_x, y=r_y, name=f'{r["Group"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
 if len(ShowNames) > 0:
     for i, g in enumerate(ShowNames):
         Records = Groups[Groups['Name'] == g]
@@ -135,7 +135,7 @@ if len(ShowNames) > 0:
                 r_y.append(y.max()-1-i/10)
                 r_y.append(y.max()-1-i/10)
                 r_y.append(None)
-        fig.add_trace(go.Line(x=r_x, y=r_y, name=f'{r["Name"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
+        fig.add_trace(go.Scatter(x=r_x, y=r_y, name=f'{r["Name"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
 
 if SpectrumType == 'XANES':
     # Autoscale x-axis: ±50 eV around the shown functional groups.
