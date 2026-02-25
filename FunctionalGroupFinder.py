@@ -49,9 +49,14 @@ SpectrumMax = Groups[f'max {SpectrumUnit}'].astype(float).max()
 st.markdown('### List of all functional groups.')
 st.write(Groups)
 
-ShowGroups = st.sidebar.multiselect('Select Functional Groups by bond (up to 5)', np.sort(Groups['Group'].unique()))
-
-ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(Groups['Name'].unique()))
+if SpectrumType == 'XANES':
+    ShowEdges = st.sidebar.multiselect('Select edge (up to 5)', np.sort(Groups['Group'].unique()))
+    filtered_for_names = Groups[Groups['Group'].isin(ShowEdges)] if ShowEdges else Groups
+    ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(filtered_for_names['Name'].unique()))
+    ShowGroups = []
+else:
+    ShowGroups = st.sidebar.multiselect('Select Functional Groups by bond (up to 5)', np.sort(Groups['Group'].unique()))
+    ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(Groups['Name'].unique()))
 
 if SpectrumType == 'XANES':
     ShowThresholds = st.sidebar.checkbox('Show ionization thresholds', value=True)
@@ -136,8 +141,6 @@ if SpectrumType == 'XANES':
     # Autoscale x-axis: ±50 eV around the shown functional groups.
     # Collect all records currently being displayed as group markers.
     dfs = []
-    if ShowGroups:
-        dfs.append(Groups[Groups['Group'].isin(ShowGroups)])
     if ShowNames:
         dfs.append(Groups[Groups['Name'].isin(ShowNames)])
     selected = pd.concat(dfs) if dfs else pd.DataFrame(columns=Groups.columns)
