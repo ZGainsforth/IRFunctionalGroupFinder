@@ -26,9 +26,7 @@ XANES_THRESHOLDS = {
 
 if SpectrumType == 'XANES':
     Groups = pd.read_csv('XANESFunctionalGroups.csv', index_col=0).sort_values('min eV')
-    # 'Group' column holds the functional group name; derive absorption edge for Group
-    Groups['Name'] = Groups['Group']
-    Groups['Group'] = Groups['min eV'].apply(lambda x: 'C 1s' if x < 298 else ('N 1s' if x < 500 else 'O 1s'))
+    Groups['Edge'] = Groups['min eV'].apply(lambda x: 'C 1s' if x < 298 else ('N 1s' if x < 500 else 'O 1s'))
     SpectrumUnit = 'eV'
     # A default spectrum in case the user doesn't load one.
     S = pd.DataFrame()
@@ -50,10 +48,11 @@ st.markdown('### List of all functional groups.')
 st.write(Groups)
 
 if SpectrumType == 'XANES':
-    ShowEdges = st.sidebar.multiselect('Select edge (up to 5)', np.sort(Groups['Group'].unique()))
-    filtered_for_names = Groups[Groups['Group'].isin(ShowEdges)] if ShowEdges else Groups
-    ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(filtered_for_names['Name'].unique()))
-    ShowGroups = []
+    edge_options = ['All'] + list(np.sort(Groups['Edge'].unique()))
+    ShowEdge = st.sidebar.selectbox('Select edge', edge_options)
+    filtered_for_groups = Groups[Groups['Edge'] == ShowEdge] if ShowEdge != 'All' else Groups
+    ShowGroups = st.sidebar.multiselect('Select Functional Groups by bond (up to 5)', np.sort(Groups['Group'].unique()))
+    ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(Groups['Name'].unique()))
 else:
     ShowGroups = st.sidebar.multiselect('Select Functional Groups by bond (up to 5)', np.sort(Groups['Group'].unique()))
     ShowNames = st.sidebar.multiselect('Select Functional Groups by description (up to 5)', np.sort(Groups['Name'].unique()))
@@ -116,7 +115,7 @@ if len(ShowGroups) > 0:
                 r_y.append(None)
         fig.add_trace(go.Scatter(x=r_x, y=r_y, name=f'{r["Group"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
 if len(ShowNames) > 0:
-    for i, g in enumerate(ShowNames):
+    for i, g in enumerate(ShowNames, start=len(ShowGroups)):
         Records = Groups[Groups['Name'] == g]
         r_x = []
         r_y = []
@@ -138,18 +137,10 @@ if len(ShowNames) > 0:
         fig.add_trace(go.Scatter(x=r_x, y=r_y, name=f'{r["Name"]}', mode='lines', line=dict(color=ColorList[i%len(ColorList)], width=5)))
 
 if SpectrumType == 'XANES':
-    # Autoscale x-axis: ±50 eV around the shown functional groups.
-    # Collect all records currently being displayed as group markers.
-    dfs = []
-    if ShowNames:
-        dfs.append(Groups[Groups['Name'].isin(ShowNames)])
-    selected = pd.concat(dfs) if dfs else pd.DataFrame(columns=Groups.columns)
-
-    if len(selected) > 0:
-        x_lo = selected['min eV'].min() - 50
-        x_hi = selected['max eV'].max() + 50
+    EDGE_RANGES = {'C 1s': (280, 320), 'N 1s': (390, 420), 'O 1s': (520, 560)}
+    if ShowEdge != 'All':
+        x_lo, x_hi = EDGE_RANGES[ShowEdge]
     else:
-        # No groups selected: show the full database range with padding
         x_lo = SpectrumMin - 50
         x_hi = SpectrumMax + 50
     fig.update_layout(xaxis_range=[x_lo, x_hi])
